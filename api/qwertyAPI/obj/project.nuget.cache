@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "spwcj4QKm4Mt2+KJCG9i1mF/v4MKFYN88ZmXuRw4ygUTTIVs2PwBf8CwcVasMAadr4lYIu0uyivGKBLxKDvswA==",
+  "dgSpecHash": "iYj5eJBSly9ijEwo9+I5qE3jG3QIDD4sfFHZSDEbP5f7oPsSsoumzXzdmbo2wHwFfKR1/S9qtxFb6KhPeUsoGw==",
   "success": true,
-  "projectFilePath": "/Users/bryank/workspace/qwerty/api/QwertyApi.csproj",
+  "projectFilePath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
   "expectedPackageFiles": [
     "/Users/bryank/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/bryank/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
