@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QwertyApi", "qwertyAPI\QwertyApi.csproj", "{5CAB9290-BF0A-4FFD-AC8D-068CD94F47DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "qwertyAPI.Tests", "qwertyAPI.Tests\qwertyAPI.Tests.csproj", "{65B6827F-8C2F-433F-9F7A-96FF43E7CA19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{5CAB9290-BF0A-4FFD-AC8D-068CD94F47DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CAB9290-BF0A-4FFD-AC8D-068CD94F47DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CAB9290-BF0A-4FFD-AC8D-068CD94F47DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B6827F-8C2F-433F-9F7A-96FF43E7CA19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B6827F-8C2F-433F-9F7A-96FF43E7CA19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B6827F-8C2F-433F-9F7A-96FF43E7CA19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B6827F-8C2F-433F-9F7A-96FF43E7CA19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
