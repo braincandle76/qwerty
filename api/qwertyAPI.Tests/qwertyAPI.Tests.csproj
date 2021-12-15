@@ -24,4 +24,7 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QwertyAPI\QwertyApi.csproj" />
+  </ItemGroup>
 </Project>

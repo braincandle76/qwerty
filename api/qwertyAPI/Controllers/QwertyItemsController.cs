@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using qwertyApi.Models;
+using QwertyApi.Models;
 
-namespace qwertyApi.Controllers
+namespace QwertyApi.Controllers
 {
     [Route("api/qwertyItems")]
     [ApiController]

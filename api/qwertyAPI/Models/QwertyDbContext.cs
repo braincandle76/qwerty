@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
 
-namespace qwertyApi.Models
+namespace QwertyApi.Models
 {
     public class QwertyDbContext : DbContext
     {

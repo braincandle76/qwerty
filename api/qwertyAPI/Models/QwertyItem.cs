@@ -1,4 +1,4 @@
-namespace qwertyApi.Models
+namespace QwertyApi.Models
 {
     public class QwertyItem
     {
