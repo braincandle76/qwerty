@@ -11,6 +11,6 @@ namespace QwertyApi.Models
         {
         }
 
-        public DbSet<QwertyItem> QwertyItems { get; set; }
+        public DbSet<QwertyProfile> QwertyProfiles { get; set; }
     }
 }
