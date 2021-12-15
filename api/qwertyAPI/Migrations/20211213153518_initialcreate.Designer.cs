@@ -10,9 +10,9 @@ using qwertyApi.Models;
 
 namespace QwertyApi.Migrations
 {
-    [DbContext(typeof(qwertyContext))]
-    [Migration("20211201202728_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(QwertyDbContext))]
+    [Migration("20211213153518_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

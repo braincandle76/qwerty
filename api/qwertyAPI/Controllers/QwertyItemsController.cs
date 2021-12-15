@@ -11,29 +11,29 @@ namespace qwertyApi.Controllers
 {
     [Route("api/qwertyItems")]
     [ApiController]
-    public class qwertyItemsController : ControllerBase
+    public class QwertyItemsController : ControllerBase
     {
-        private readonly qwertyContext _context;
+        private readonly QwertyDbContext _context;
 
-        public qwertyItemsController(qwertyContext context)
+        public QwertyItemsController(QwertyDbContext context)
         {
             _context = context;
         }
 
         // GET: api/qwertyItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<qwertyItemDTO>>> GetqwertyItems()
+        public async Task<ActionResult<IEnumerable<QwertyItemDTO>>> GetqwertyItems()
         {
-            return await _context.qwertyItems
+            return await _context.QwertyItems
                 .Select(x => ItemToDTO(x))
                 .ToListAsync();
         }
 
         // GET: api/qwertyItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<qwertyItemDTO>> GetqwertyItem(long id)
+        public async Task<ActionResult<QwertyItemDTO>> GetQwertyItem(long id)
         {
-            var qwertyItem = await _context.qwertyItems.FindAsync(id);
+            var qwertyItem = await _context.QwertyItems.FindAsync(id);
 
             if (qwertyItem == null)
             {
@@ -45,14 +45,14 @@ namespace qwertyApi.Controllers
         // PUT: api/qwertyItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateqwertyItem(long id, qwertyItemDTO qwertyItemDTO)
+        public async Task<IActionResult> UpdateQwertyItem(long id, QwertyItemDTO qwertyItemDTO)
         {
             if (id != qwertyItemDTO.Id)
             {
                 return BadRequest();
             }
 
-            var qwertyItem = await _context.qwertyItems.FindAsync(id);
+            var qwertyItem = await _context.QwertyItems.FindAsync(id);
             if (qwertyItem == null)
             {
                 return NotFound();
@@ -75,35 +75,35 @@ namespace qwertyApi.Controllers
         // POST: api/qwertyItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<qwertyItemDTO>> CreateqwertyItem(qwertyItemDTO qwertyItemDTO)
+        public async Task<ActionResult<QwertyItemDTO>> CreateQwertyItem(QwertyItemDTO qwertyItemDTO)
         {
-            var qwertyItem = new qwertyItem
+            var qwertyItem = new QwertyItem
             {
                 IsComplete = qwertyItemDTO.IsComplete,
                 Name = qwertyItemDTO.Name
             };
 
-            _context.qwertyItems.Add(qwertyItem);
+            _context.QwertyItems.Add(qwertyItem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                nameof(GetqwertyItem),
+                nameof(GetQwertyItem),
                 new { id = qwertyItem.Id },
                 ItemToDTO(qwertyItem));
         }
 
         // DELETE: api/qwertyItems/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteqwertyItem(long id)
+        public async Task<IActionResult> DeleteQwertyItem(long id)
         {
-            var qwertyItem = await _context.qwertyItems.FindAsync(id);
+            var qwertyItem = await _context.QwertyItems.FindAsync(id);
 
             if (qwertyItem == null)
             {
                 return NotFound();
             }
 
-            _context.qwertyItems.Remove(qwertyItem);
+            _context.QwertyItems.Remove(qwertyItem);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -111,11 +111,11 @@ namespace qwertyApi.Controllers
 
         private bool qwertyItemExists(long id)
         {
-            return _context.qwertyItems.Any(e => e.Id == id);
+            return _context.QwertyItems.Any(e => e.Id == id);
         }
 
-        private static qwertyItemDTO ItemToDTO(qwertyItem qwertyItem) =>
-            new qwertyItemDTO
+        private static QwertyItemDTO ItemToDTO(QwertyItem qwertyItem) =>
+            new QwertyItemDTO
             {
                 Id = qwertyItem.Id,
                 Name = qwertyItem.Name,

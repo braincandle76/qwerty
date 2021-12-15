@@ -27,7 +27,7 @@ namespace qwertyApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "qwerty", Version = "v1" });
             });
 
-            services.AddDbContext<qwertyContext>(b =>
+            services.AddDbContext<QwertyDbContext>(b =>
             {
                 b.UseSqlServer(Configuration.GetConnectionString("SqlDbConnection")); ;
             }, ServiceLifetime.Transient);

@@ -9,8 +9,8 @@ using qwertyApi.Models;
 
 namespace QwertyApi.Migrations
 {
-    [DbContext(typeof(qwertyContext))]
-    partial class qwertyContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(QwertyDbContext))]
+    partial class QwertyDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
