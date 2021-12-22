@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
+  "FilePath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16295,7 +16295,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "QwertyApi",
+  "RootNamespace": "QwertyAPI",
   "Documents": [],
   "SerializationFormat": "0.2"
 }

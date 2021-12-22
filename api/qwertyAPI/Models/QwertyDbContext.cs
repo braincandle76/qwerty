@@ -1,12 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace QwertyApi.Models
+namespace QwertyAPI.Models
 {
-    public class QwertyDbContext : DbContext
+    public partial class QwertyDbContext : DbContext
     {
         public QwertyDbContext() { }
-        public QwertyDbContext(DbContextOptions<QwertyDbContext> options): base(options){ }
+        public QwertyDbContext(DbContextOptions<QwertyDbContext> options) : base(options) { }
 
         public virtual DbSet<QwertyProfile> QwertyProfiles { get; set; }
+
+        //   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //      modelBuilder.Entity
+        //  }
     }
 }

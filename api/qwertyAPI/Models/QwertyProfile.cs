@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 
-namespace QwertyApi.Models
+namespace QwertyAPI.Models
 {
     public class QwertyProfile
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
+        public QwertyProfile (string name)
+        {
+            Name = name;
+        }
     }
 }

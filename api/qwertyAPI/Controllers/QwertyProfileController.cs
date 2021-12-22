@@ -1,12 +1,13 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using QwertyApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using QwertyAPI.Models;
+using QwertyAPI.ViewModels;
 
-namespace backend.Controllers
+namespace QwertyAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -20,5 +21,20 @@ namespace backend.Controllers
             _db = db;
             _logger = logger;
         }
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            try
+            {
+                var profile = await _db.QwertyProfiles.ToListAsync();
+                return new OkObjectResult(profile);
+            }
+
+            catch (Exception e)
+            {
+                _logger.LogCritical($"SQL Read error. It is likely that there is no database connection established. ${e.Message}");
+                throw;
+            }
         }
     }
+}
