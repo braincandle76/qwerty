@@ -26,8 +26,8 @@ namespace QwertyAPI.Controllers
         {
             try
             {
-                var profile = await _db.QwertyProfiles.ToListAsync();
-                return new OkObjectResult(profile);
+                var profiles = await _db.QwertyProfiles.ToListAsync();
+                return new OkObjectResult(profiles);
             }
 
             catch (Exception e)

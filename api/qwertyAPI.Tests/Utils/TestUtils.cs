@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using QwertyAPI.Models;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using QwertyAPI.Models;
 
 namespace QwertyAPI.Tests.Utils
 {
@@ -19,6 +19,7 @@ namespace QwertyAPI.Tests.Utils
             await db.Database.EnsureCreatedAsync();
 
             var profile = new QwertyProfile(PROFILE_NAME);
+            db.QwertyProfiles.Add(profile);
 
             await db.SaveChangesAsync();
 

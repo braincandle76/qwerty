@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0pz3qH4NSvyDwwTg4Tn7yX6HO6kUtK+5oUFXNfX1Hb/89adh8difZwYu5d4UKKWP7q9s+3z1QjZzD5njANJiaQ==",
+  "dgSpecHash": "lK8IdUhISRaCuFBatzhH405KeNY71RwmAOomG8DYJ0RczmAh2kBmmrLDXKHc6aPdDb7bt6nJzole1fj4DI55LA==",
   "success": true,
-  "projectFilePath": "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/qwertyAPI.Tests.csproj",
+  "projectFilePath": "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/QwertyAPI.Tests.csproj",
   "expectedPackageFiles": [
     "/Users/bryank/.nuget/packages/castle.core/4.4.0/castle.core.4.4.0.nupkg.sha512",
     "/Users/bryank/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",

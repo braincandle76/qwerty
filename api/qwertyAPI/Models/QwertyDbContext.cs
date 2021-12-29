@@ -9,9 +9,10 @@ namespace QwertyAPI.Models
 
         public virtual DbSet<QwertyProfile> QwertyProfiles { get; set; }
 
-        //   protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //      modelBuilder.Entity
-        //  }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<QwertyProfile>()
+            .HasIndex(e => e.Id);
+        }
     }
 }

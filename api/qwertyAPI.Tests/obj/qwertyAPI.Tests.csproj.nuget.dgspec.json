@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/qwertyAPI.Tests.csproj": {}
+    "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/QwertyAPI.Tests.csproj": {}
   },
   "projects": {
-    "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/qwertyAPI.Tests.csproj": {
+    "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/QwertyAPI.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/qwertyAPI.Tests.csproj",
-        "projectName": "qwertyAPI.Tests",
-        "projectPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/qwertyAPI.Tests.csproj",
+        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/QwertyAPI.Tests.csproj",
+        "projectName": "QwertyAPI.Tests",
+        "projectPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/QwertyAPI.Tests.csproj",
         "packagesPath": "/Users/bryank/.nuget/packages/",
-        "outputPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI.Tests/obj/",
+        "outputPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bryank/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj": {
-                "projectPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj"
+              "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj": {
+                "projectPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj": {
+    "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
-        "projectName": "QwertyApi",
-        "projectPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
+        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj",
+        "projectName": "QwertyAPI",
+        "projectPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj",
         "packagesPath": "/Users/bryank/.nuget/packages/",
-        "outputPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/obj/",
+        "outputPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bryank/.nuget/NuGet/NuGet.Config"

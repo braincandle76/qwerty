@@ -1,15 +1,16 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using QwertyAPI.Controllers;
-using QwertyAPI.Models;
-using QwertyAPI.ViewModels;
-using QwertyAPI.Tests.Utils;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
+using QwertyAPI.Controllers;
+using QwertyAPI.Models;
+using QwertyAPI.Tests.Utils;
+using QwertyAPI.ViewModels;
 using Xunit;
 
 namespace QwertyAPI.Tests.Controllers
@@ -38,7 +39,7 @@ namespace QwertyAPI.Tests.Controllers
                 var response = await testObject.Get();
 
                 response.Should().BeOfType<OkObjectResult>();
-                var result = (response as OkObjectResult).Value as QwertyProfileResponse;
+                var result = (response as OkObjectResult).Value as QwertyProfileResponse; // this will be a list
                 result.Id.Should().Be(db.QwertyProfiles.First(p => p.Name == TestUtils.PROFILE_NAME).Id);
                 result.Name.Should().Be(TestUtils.PROFILE_NAME);
             }
@@ -52,6 +53,7 @@ namespace QwertyAPI.Tests.Controllers
                 var response = await testObject.Get();
 
                 response.Should().BeOfType<NotFoundResult>();
+                // I think this will be empty list instead
             }
 
             [Fact]

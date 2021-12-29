@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj": {}
+    "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj": {}
   },
   "projects": {
-    "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj": {
+    "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
-        "projectName": "QwertyApi",
-        "projectPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/QwertyApi.csproj",
+        "projectUniqueName": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj",
+        "projectName": "QwertyAPI",
+        "projectPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/QwertyAPI.csproj",
         "packagesPath": "/Users/bryank/.nuget/packages/",
-        "outputPath": "/Users/bryank/workspace/qwerty/api/qwertyAPI/obj/",
+        "outputPath": "/Users/bryank/workspace/qwerty/api/QwertyAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bryank/.nuget/NuGet/NuGet.Config"
