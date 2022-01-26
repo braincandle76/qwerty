@@ -36,5 +36,14 @@ namespace QwertyAPI.Controllers
                 throw;
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(QwertyProfile profile)
+        {
+            var newProfile = _db.QwertyProfiles.Add(profile);
+            await _db.SaveChangesAsync();
+            var qwertyProfileResponse = new QwertyProfileResponse(profile);
+            return new OkObjectResult(qwertyProfileResponse);
+        }
     }
 }

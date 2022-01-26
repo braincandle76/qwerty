@@ -8,6 +8,7 @@ namespace QwertyAPI.Models
         public QwertyDbContext(DbContextOptions<QwertyDbContext> options) : base(options) { }
 
         public virtual DbSet<QwertyProfile> QwertyProfiles { get; set; }
+        public virtual DbSet<QwertyMessage> QwertyMessages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

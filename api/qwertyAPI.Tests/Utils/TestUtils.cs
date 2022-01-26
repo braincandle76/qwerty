@@ -11,6 +11,7 @@ namespace QwertyAPI.Tests.Utils
     public static class TestUtils
     {
         public static readonly string PROFILE_NAME = "Fargrim Fireforge";
+        public static readonly string ADDED_NAME = "Keyleth Nightbreeze";
 
         public static async Task<QwertyDbContext> GetTestDbContext()
         {

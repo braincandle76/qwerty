@@ -8,7 +8,9 @@ namespace QwertyAPI.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public QwertyProfile (string name)
+        public ICollection<QwertyMessage> Messages { get; set; }
+
+        public QwertyProfile(string name)
         {
             Name = name;
         }

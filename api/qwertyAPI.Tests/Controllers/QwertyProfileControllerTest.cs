@@ -68,5 +68,26 @@ namespace QwertyAPI.Tests.Controllers
                 exception.Message.Should().Be("Something Broke");
             }
         }
+
+        public class AddProfile : QwertyProfileControllerTest
+        {
+            [Fact]
+            public async void WhenProfileNameChanges_ReturnsOkObject()
+            {
+                var NewQwertyProfile = new QwertyProfile(TestUtils.ADDED_NAME); // (arrange)Creates our request object
+
+                var response = await testObject.Post(NewQwertyProfile); // (act)Calls test function
+
+                response.Should().BeOfType<OkObjectResult>(); //(assert) result shoud be certain type-status 200 with a value
+
+                var actualProfile = (response as OkObjectResult).Value as QwertyProfileResponse; // converting the value of our result to a QwertyProfileResponse
+
+                var dbProfile = db.QwertyProfiles.FirstOrDefault(p => p.Name == TestUtils.ADDED_NAME); //retrieving the saved profile from the database based on the name of the request object that we passed into the test function
+                dbProfile.Should().NotBeNull(); // asserting that the value we get back from the database is not null (confirms it was saved to the database)
+                var expectedProfile = dbProfile; //variable rename for readability
+                actualProfile.Id.Should().Be(expectedProfile.Id); //asserts that the Id on the response we got back matches the Id on the profile that was saved to the database
+                actualProfile.Name.Should().Be(expectedProfile.Name); //asserts that the Name on the response we got back matches the Name on the profile that was saved to the database
+            }
+        }
     }
 }
