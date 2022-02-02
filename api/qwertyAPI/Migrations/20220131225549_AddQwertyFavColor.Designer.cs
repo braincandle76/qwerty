@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QwertyAPI.Models;
 
@@ -10,9 +11,10 @@ using QwertyAPI.Models;
 namespace QwertyApi.Migrations
 {
     [DbContext(typeof(QwertyDbContext))]
-    partial class QwertyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220131225549_AddQwertyFavColor")]
+    partial class AddQwertyFavColor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
