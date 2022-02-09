@@ -43,6 +43,18 @@ namespace QwertyApi.Migrations
                 table: "QwertyFavColors",
                 column: "QwertyProfileId",
                 unique: true);
+
+            migrationBuilder.Sql(@"
+                INSERT INTO dbo.QwertyProfiles (Name) VALUES ('Keith');
+                INSERT INTO dbo.QwertyProfiles (Name) VALUES ('Marla');
+                INSERT INTO dbo.QwertyProfiles (Name) VALUES ('Dawn');
+                INSERT INTO dbo.QwertyProfiles (Name) VALUES ('Theo');
+                INSERT INTO dbo.QwertyFavColors (Color, QwertyProfileId) VALUES ('Red', 1);
+                INSERT INTO dbo.QwertyFavColors (Color, QwertyProfileId) VALUES ('Orange', 2);
+                INSERT INTO dbo.QwertyFavColors (Color, QwertyProfileId) VALUES ('Yellow', 3);
+                INSERT INTO dbo.QwertyFavColors (Color, QwertyProfileId) VALUES ('Green', 4);
+                INSERT INTO dbo.QwertyFavColors (Color, QwertyProfileId) VALUES ('Blue', 5);
+            ");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -7,8 +7,6 @@ namespace QwertyAPI.Models
     {
         public int Id { get; set; }
         public string Color { get; set; }
-        public int QwertyProfileId { get; set; }
-        public virtual QwertyProfile QwertyProfile { get; set; }
 
     }
 }
