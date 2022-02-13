@@ -28,7 +28,7 @@ namespace QwertyAPI.Controllers
             try
             {
                 var colors = await _db.QwertyFavColors.ToListAsync();
-                return new OkObjectResult(colors);
+                return new OkObjectResult(colors.Select(c => new QwertyFavColorResponse(c)));
             }
 
             catch (Exception e)
