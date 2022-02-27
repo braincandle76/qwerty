@@ -14,15 +14,15 @@ namespace QwertyAPI.Tests.Utils
 
         public static async Task SeedDBWithData(QwertyDbContext db)
         {
-            AddProfiles(db);
+            AddQwertyProfiles(db);
             AddQwertyFavColor(db);
 
             await db.SaveChangesAsync();
         }
 
-        private static void AddProfiles(QwertyDbContext db)
+        private static void AddQwertyProfiles(QwertyDbContext db)
         {
-            var colors = db.QwertyFavColors.Local.First();
+            var colors = db.QwertyFavColors.Local.FirstOrDefault();
             var profile = new QwertyProfile
             {
                 Name = PROFILE_NAME,
