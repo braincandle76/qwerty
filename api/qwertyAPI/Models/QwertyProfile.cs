@@ -13,9 +13,10 @@ namespace QwertyAPI.Models
         public virtual QwertyFavColor FavColor { get; set; }
         public virtual ICollection<QwertyMessage> Messages { get; set; }
 
-        public QwertyProfile(string name)
-        {
-            Name = name;
-        }
+        // public QwertyProfile(string name)
+        // {
+        //     Name = name;
+        //     QwertyFavColorId = 
+        // }
     }
 }

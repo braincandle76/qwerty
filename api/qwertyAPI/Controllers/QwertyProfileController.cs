@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -26,8 +28,11 @@ namespace QwertyAPI.Controllers
         {
             try
             {
-                var profiles = await _db.QwertyProfiles.ToListAsync();
-                return new OkObjectResult(profiles);
+                var profiles = await _db.QwertyProfiles
+                .Include(p => p.FavColor)
+                .ToListAsync();
+                var qwertyProfileResponse = profiles.Select(p => new QwertyProfileResponse(p));
+                return new OkObjectResult(qwertyProfileResponse);
             }
 
             catch (Exception e)
@@ -38,12 +43,32 @@ namespace QwertyAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(QwertyProfile profile)
+        public async Task<IActionResult> Post(QwertyProfileRequest profileRequest)
         {
-            var newProfile = _db.QwertyProfiles.Add(profile);
+            var validationResults = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(profileRequest, new ValidationContext(profileRequest), validationResults, true))
+            {
+                return new BadRequestObjectResult(validationResults);
+            }
+
+            var newQwertyProfile = new QwertyProfile
+            {
+                Name = profileRequest.Name,
+                QwertyFavColorId = profileRequest.QwertyFavColorId,
+            };
+
+            if (_db.QwertyProfiles.Any(p => p.Name == newQwertyProfile.Name))
+            {
+                return new ConflictObjectResult("Profile creation failed due to duplicate Profile name");
+            }
+
+            _db.QwertyProfiles.Add(newQwertyProfile);
             await _db.SaveChangesAsync();
-            var qwertyProfileResponse = new QwertyProfileResponse(profile);
-            return new OkObjectResult(qwertyProfileResponse);
+            var addedQwertyProfile = await _db.QwertyProfiles
+                .Include(c => c.FavColor)
+                .SingleAsync(p => p.Id == newQwertyProfile.Id);
+
+            return new CreatedResult("api/QwertyProfiles/" + newQwertyProfile.Id, new QwertyProfileResponse(addedQwertyProfile));
         }
     }
 }

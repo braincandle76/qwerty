@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +37,30 @@ namespace QwertyAPI.Controllers
                 _logger.LogCritical($"SQL Read error. It is likely that there is no database connection established. ${e.Message}");
                 throw;
             }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(QwertyFavColorRequest favColorRequest)
+        {
+            var validationResults = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(favColorRequest, new ValidationContext(favColorRequest), validationResults, true))
+            {
+                return new BadRequestObjectResult(validationResults);
+            }
+
+            var newQwertyFavColor = new QwertyFavColor
+            {
+                Color = favColorRequest.Color,
+                Id = favColorRequest.QwertyFavColorId,
+            };
+
+            _db.QwertyFavColors.Add(newQwertyFavColor);
+            await _db.SaveChangesAsync();
+            var addedQwertyFavColor = await _db.QwertyFavColors
+                .Include(c => c.Color)
+                .SingleAsync(p => p.Id == newQwertyFavColor.Id);
+
+            return new CreatedResult("api/QwertyFavColors/" + newQwertyFavColor.Id, new QwertyFavColorResponse(addedQwertyFavColor));
         }
     }
 }

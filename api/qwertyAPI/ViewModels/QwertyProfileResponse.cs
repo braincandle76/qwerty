@@ -9,10 +9,13 @@ namespace QwertyAPI.ViewModels
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public string FavColor { get; set; }
+
         public QwertyProfileResponse(QwertyProfile profile)
         {
             Id = profile.Id;
             Name = profile.Name;
+            FavColor = profile.FavColor.Color;
         }
     }
 

@@ -18,12 +18,7 @@ namespace QwertyAPI.Tests.Utils
             var db = new QwertyDbContext(CreateOptions());
             await db.Database.EnsureDeletedAsync();
             await db.Database.EnsureCreatedAsync();
-
-            var profile = new QwertyProfile(PROFILE_NAME);
-            db.QwertyProfiles.Add(profile);
-
-            await db.SaveChangesAsync();
-
+            await TestData.SeedDBWithData(db);
             return db;
         }
 
