@@ -31,7 +31,7 @@ namespace QwertyAPI.Tests.Controllers
             await db.DisposeAsync();
         }
 
-        public class GetProfile : QwertyProfileControllerTest
+        public class Get : QwertyProfileControllerTest
         {
             [Fact]
             public async void WhenProfileExists_ReturnsOkObjectContainingProfile()
@@ -39,9 +39,12 @@ namespace QwertyAPI.Tests.Controllers
                 var response = await testObject.Get();
 
                 response.Should().BeOfType<OkObjectResult>();
-                var result = (response as OkObjectResult).Value as QwertyProfileResponse; // this will be a list
-                result.Id.Should().Be(db.QwertyProfiles.First(p => p.Name == TestUtils.PROFILE_NAME).Id);
-                result.Name.Should().Be(TestUtils.PROFILE_NAME);
+                var profileResultList = (response as OkObjectResult).Value as IEnumerable<QwertyProfileResponse>;
+                profileResultList.Count().Should().Be(db.QwertyProfiles.Count());
+                var profile = profileResultList.First(p => p.Name == TestData.PROFILE_NAME);
+
+                profile.Name.Should().Be(TestData.PROFILE_NAME);
+                profile.FavColor.Should().Be(TestData.FAVORITE_COLOR);
             }
 
             [Fact]
@@ -53,7 +56,6 @@ namespace QwertyAPI.Tests.Controllers
                 var response = await testObject.Get();
 
                 response.Should().BeOfType<NotFoundResult>();
-                // I think this will be empty list instead
             }
 
             [Fact]
@@ -75,7 +77,7 @@ namespace QwertyAPI.Tests.Controllers
 
             public async void WhenNewQwertyProfileIsAdded_ReturnsOkObject()
             {
-                var color = db.QwertyFavColors.First(ofc => ofc.Color == TestData.FAVORITE_COLOR);
+                var color = db.QwertyFavColors.First(c => c.Color == TestData.FAVORITE_COLOR);
                 var newQwertyProfile = new QwertyProfileRequest
                 {
                     Name = "Amelia Earhart",
